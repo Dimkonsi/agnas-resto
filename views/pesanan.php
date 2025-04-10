@@ -38,7 +38,7 @@ $dataMenu = $menu->getAll();
 </head>
 <body class="bg-gray-100 p-6">
 <header>
-    <?php require('navbar.html'); ?>
+    <?php require('navbar.php'); ?>
 </header>
 <div class="container mx-auto bg-white p-6 rounded-lg shadow-lg">
     <h1 class="text-3xl font-bold mb-4">Manajemen Pesanan</h1>

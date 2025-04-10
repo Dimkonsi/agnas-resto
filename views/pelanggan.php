@@ -34,7 +34,7 @@ $dataPelanggan = $pelanggan->getAll();
 
 <header>
   <?php
-      require('navbar.html');
+      require('navbar.php');
       ?>
 </header>
 

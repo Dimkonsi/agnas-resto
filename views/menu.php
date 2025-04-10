@@ -32,7 +32,7 @@ $dataMenu = $menu->getAll();
 <body class="bg-gray-100">
   <!-- Header -->
   <header class="bg-white shadow">
-    <?php require('navbar.html'); ?>
+    <?php require('navbar.php'); ?>
   </header>
 
   <!-- Main Container -->

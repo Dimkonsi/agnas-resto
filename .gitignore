@@ -1,0 +1,6 @@
+# Abaikan semua file SQL (backup database)
+*.sql
+
+# Jika ada folder khusus untuk backup database
+backup/
+database/backup/
