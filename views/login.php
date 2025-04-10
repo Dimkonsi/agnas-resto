@@ -32,10 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['role'] = $logInUser['role'];
 
         // Pengalihan berdasarkan peran
-        if ($_SESSION['role'] == 'admin') {
-            header("Location: ../admin/dashboard.php");
-        } elseif ($_SESSION['role'] == 'kasir') {
-            header("Location: ../kasir/dashboard.php");
+        if ($_SESSION['role']) {
+            header("Location: dashboard.php");
         } else {
             // Peran tidak dikenal, arahkan ke halaman default atau tampilkan pesan error
             header("Location: ../default/dashboard.php");

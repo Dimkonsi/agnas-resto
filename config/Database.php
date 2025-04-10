@@ -1,7 +1,7 @@
 <?php 
 
 class Database{
-    private $host = "Localhost" ;
+    private $host = "localhost" ;
     private $db_name = "resto_db";
     private $username = "root";
     private $password = "";
@@ -19,10 +19,9 @@ class Database{
     }
 
     public function closeConnection(){
-        if($this->conn){
-            $this->conn->close();
-        }
+        $this->conn = null;
     }
+    
 }
 
 ?>

@@ -28,9 +28,11 @@ class User extends BaseModel{
         $stmt->bindParam(":username", $username);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // return $user;
     
         // Verifikasi kata sandi
-        if ($user && password_verify($password, $user['password'])) {
+        if ($user && password_verify($password, password_hash($user['password'], PASSWORD_BCRYPT))) {
             return $user; // Login berhasil
         } else {
             return false; // Login gagal
