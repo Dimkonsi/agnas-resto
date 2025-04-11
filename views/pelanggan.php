@@ -31,13 +31,12 @@ $dataPelanggan = $pelanggan->getAll();
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-
-<header>
-  <?php
+    <header>
+        <?php
       require('navbar.php');
       ?>
 </header>
-
+<div class="container mx-auto bg-white p-6 rounded-lg shadow-lg">
     <h1 class="text-3xl font-bold mb-4">Manajemen Pelanggan</h1>
     
     <form method="POST" class="mb-4">
@@ -83,7 +82,13 @@ $dataPelanggan = $pelanggan->getAll();
             <?php endforeach; ?>
         </tbody>
     </table>
-
+    <?php 
+    if($_SESSION['role']==['admin']) {
+    ?>
     <a href="dashboard.php" class="mt-4 inline-block bg-gray-500 text-white px-4 py-2">Kembali ke Dashboard</a>
+    <?php
+    }
+    ?>
+</div>
 </body>
 </html>
