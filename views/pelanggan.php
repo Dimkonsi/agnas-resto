@@ -84,6 +84,6 @@ $dataPelanggan = $pelanggan->getAll();
         </tbody>
     </table>
 
-    <a href="dasboard.php" class="mt-4 inline-block bg-gray-500 text-white px-4 py-2">Kembali ke Dashboard</a>
+    <a href="dashboard.php" class="mt-4 inline-block bg-gray-500 text-white px-4 py-2">Kembali ke Dashboard</a>
 </body>
 </html>

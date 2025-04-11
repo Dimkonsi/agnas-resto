@@ -1,22 +1,4 @@
 <?php
-// session_start();
-// require_once '../classes/User.php';
-
-// if($_SERVER["REQUEST_METHOD"] == "POST"){
-//     $username = $_POST['username'];
-//     $password = $_POST['password'];
-
-//     $user = new User();
-//     $logInUser =$user->login($username, $password);
-
-//     if($logInUser){
-//         $_SESSION['user'] = $logInUser;
-//         header("Location: dasboard.php");
-//         exit();
-//     }else{
-//         $error = "Periksa kembali username dan password!";
-//     }
-// }
 session_start();
 require_once '../classes/User.php';
 
@@ -32,11 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['role'] = $logInUser['role'];
 
         // Pengalihan berdasarkan peran
-        if ($_SESSION['role']) {
+        if ($_SESSION['role'] == ['admin']) {
             header("Location: dashboard.php");
-        } else {
-            // Peran tidak dikenal, arahkan ke halaman default atau tampilkan pesan error
-            header("Location: ../default/dashboard.php");
+        }else {
+            header("Location: pesanan.php");
         }
         exit();
     } else {

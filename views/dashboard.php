@@ -40,12 +40,31 @@ $ringkasan = $pesanan->getRingkasanPenjualan();
         <main class="mx-auto p-4 max-w-screen-xl">
             <h1 class="text-3xl font-semibold mb-2 text-center">Selamat Datang,
                 <?php echo $_SESSION['user']['username']; ?>!</h1>
-            <p class="text-gray-500 dark:text-gray-400 text-center mb-5 text-base">Welcome
-                to the dashboard! Here, you can easily access and manage important data in one
-                intuitive view. Monitor the latest statistics, quickly handle information, and
-                make smarter decisions based on real-time data. Use the available features to
-                enhance efficiency and productivity. Happy working!</p>
+            <?php
+            if($_SESSION['role'] == 'admin') {
+            ?>
+            <p class="text-gray-500 dark:text-gray-400 text-center mb-5 text-base">
+                Terima kasih telah menjadi bagian penting dari sistem ini. Di sini, Anda dapat dengan mudah mengelola data, 
+                memantau aktivitas terbaru, dan memastikan semuanya berjalan lancar. Gunakan berbagai fitur yang tersedia 
+                untuk meningkatkan efisiensi dan membuat keputusan terbaik.
+                Terus semangat, Admin! Peran Anda sangat berarti
+            </p>
+            <?php
+            }
+            ?>
 
+            <?php
+            if($_SESSION['role'] == 'kasir') {
+            ?>
+            <p class="text-gray-500 dark:text-gray-400 text-center mb-5 text-base">
+                Halo, Kasir Hebat!
+                Selamat datang di halaman kasir tempatmu menjalankan peran penting dengan senyum terbaikmu 😊
+                Setiap pelanggan yang kamu layani membawa cerita, dan senyummu bisa jadi cahaya di hari mereka. Walau hatimu mungkin sedang lelah atau sedih, ingatlah bahwa kamu luar biasa karena tetap berdiri, tetap melayani, dan tetap tersenyum.
+                Terus semangat, ya! Kamu tidak sendiri, dan kerja kerasmu sangat berarti 💛
+            </p>
+            <?php
+            }
+            ?>
             <div
                 class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm  dark:bg-gray-800 dark:border-gray-700 ">
 
@@ -57,11 +76,17 @@ $ringkasan = $pesanan->getRingkasanPenjualan();
                 <p class="font-normal text-gray-700 dark:text-gray-400">Total Pendapatan:
                     <strong>Rp<?= number_format($ringkasan['total_pendapatan'] ?? 0, 2, ',', '.') ?></strong>
                 </p>
+                <?php
+                if($_SESSION['role'] == 'admin') {
+                ?>
                 <a href="laporan_penjualan.php">
                     <button
                         type="button"
                         class="mt-5 text-white hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500  dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Lihat Detail Penjualan</button>
                 </a>
+                <?php
+                }
+                ?>
             </div>
 
             <?php
