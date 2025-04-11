@@ -39,7 +39,6 @@ $dataMenu = $menu->getAll();
   <main class="container mx-auto p-6">
     <div class="flex items-center justify-between mb-6">
       <h1 class="text-3xl font-bold text-gray-800">Manajemen Menu Makanan</h1>
-      <a href="dashboard.php" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Kembali ke Dashboard</a>
     </div>
 
     <!-- Card Form Tambah Menu -->
@@ -138,6 +137,9 @@ $dataMenu = $menu->getAll();
           <?php endforeach; ?>
         </tbody>
       </table>
+      <div class="pt-4">
+            <a href="dashboard.php" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 ">Kembali ke Dashboard</a>
+        </div>
     </div>
   </main>
   
