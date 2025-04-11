@@ -36,11 +36,23 @@ $dataMenu = $menu->getAll();
     <title>Manajemen Pesanan</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-6">
+<body>
 <header>
     <?php require('navbar.php'); ?>
 </header>
 <div class="container mx-auto bg-white p-6 rounded-lg shadow-lg">
+    <?php
+        if($_SESSION['role'] == 'kasir') {
+    ?>
+    <p class="text-gray-500 dark:text-gray-400 text-center mb-5 text-base">
+        Halo, Kasir Hebat!
+        Selamat datang di halaman kasir tempatmu menjalankan peran penting dengan senyum terbaikmu 😊
+        Setiap pelanggan yang kamu layani membawa cerita, dan senyummu bisa jadi cahaya di hari mereka. Walau hatimu mungkin sedang lelah atau sedih, ingatlah bahwa kamu luar biasa karena tetap berdiri, tetap melayani, dan tetap tersenyum.
+        Terus semangat, ya! Kamu tidak sendiri, dan kerja kerasmu sangat berarti 💛
+    </p>
+    <?php
+        }
+    ?>
     <h1 class="text-3xl font-bold mb-4">Manajemen Pesanan</h1>
     <form method="POST" class="mb-4 flex gap-4">
         <select name="pelanggan_id" class="border px-3 py-2" required>
@@ -84,7 +96,7 @@ $dataMenu = $menu->getAll();
                     <td class="border px-4 py-2"><?= $item['pelanggan'] ?></td>
                     <td class="border px-4 py-2"><?= $item['menu'] ?></td>
                     <td class="border px-4 py-2">
-    <img src="../uploads/<?= $item['photo_menu'] ?>" alt="<?= $item['menu'] ?>" class="w-16 h-16 object-cover">
+    <img src="../uploads/<?=$item['photo_menu'] ?>" alt="<?= $item['menu'] ?>" class="w-16 h-16 object-cover">
 </td>
 
                     <td class="border px-4 py-2"><?= $item['jumlah'] ?></td>
@@ -100,8 +112,13 @@ $dataMenu = $menu->getAll();
             <?php endforeach; ?>
         </tbody>
     </table>
+    <?php 
+    if($_SESSION['role']==['admin']) {
+    ?>
     <a href="dashboard.php" class="mt-4 inline-block bg-gray-500 text-white px-4 py-2">Kembali ke Dashboard</a>
-</div>
+    <?php
+    }
+    ?></div>
 <script>
     document.getElementById('filterInput').addEventListener('keyup', function() {
         let filter = this.value.toLowerCase();
