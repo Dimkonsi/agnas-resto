@@ -52,19 +52,6 @@ $ringkasan = $pesanan->getRingkasanPenjualan();
             <?php
             }
             ?>
-
-            <?php
-            if($_SESSION['role'] == 'kasir') {
-            ?>
-            <p class="text-gray-500 dark:text-gray-400 text-center mb-5 text-base">
-                Halo, Kasir Hebat!
-                Selamat datang di halaman kasir tempatmu menjalankan peran penting dengan senyum terbaikmu 😊
-                Setiap pelanggan yang kamu layani membawa cerita, dan senyummu bisa jadi cahaya di hari mereka. Walau hatimu mungkin sedang lelah atau sedih, ingatlah bahwa kamu luar biasa karena tetap berdiri, tetap melayani, dan tetap tersenyum.
-                Terus semangat, ya! Kamu tidak sendiri, dan kerja kerasmu sangat berarti 💛
-            </p>
-            <?php
-            }
-            ?>
             <div
                 class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm  dark:bg-gray-800 dark:border-gray-700 ">
 
@@ -89,15 +76,6 @@ $ringkasan = $pesanan->getRingkasanPenjualan();
                 ?>
             </div>
 
-            <?php
-            if($_SESSION['role'] == 'admin') {
-            ?>
-                <div class="test">
-                    <p>message</p>
-                </div>
-            <?php
-            }
-            ?>
         </main>
     </body>
 </html>
