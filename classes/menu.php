@@ -20,15 +20,6 @@ class Menu extends BaseModel{
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // public function create($nama, $harga, $stok, $photo) {
-    //     $query = "INSERT INTO " . $this->table_name . " (nama, harga, stok, photo) VALUES (:nama, :harga, :stok, :photo)";
-    //     $stmt = $this->conn->prepare($query);
-    //     $stmt->bindParam(":nama", $nama);
-    //     $stmt->bindParam(":harga", $harga);
-    //     $stmt->bindParam(":stok", $stok);
-    //     $stmt->bindParam(":photo", $photo);
-    //     return $stmt->execute();
-    // }
 
 public function create($nama, $harga, $stok, $photo) {
     $photo_name = null; // Default tanpa gambar
