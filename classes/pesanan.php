@@ -6,7 +6,7 @@ class Pesanan extends BaseModel {
     
     // Ambil semua data pesanan (tambahkan field photo)
     public function getAll() {
-        $query = "SELECT pesanan.id, pelanggan.nama AS pelanggan, menu.nama AS menu, pesanan.photo AS photo_menu, 
+        $query = "SELECT pesanan.id, pelanggan.nama AS pelanggan, menu.nama AS menu, menu.photo AS photo_menu, 
                          pesanan.jumlah, pesanan.total, pesanan.tanggal 
                   FROM " . $this->table_name . " 
                   JOIN pelanggan ON pesanan.pelanggan_id = pelanggan.id 
