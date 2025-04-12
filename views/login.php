@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['role'] = $logInUser['role'];
 
         // Pengalihan berdasarkan peran
-        if ($_SESSION['role'] == ['admin']) {
+        if ($_SESSION['role'] == 'admin') {
             header("Location: dashboard.php");
         }else {
             header("Location: pesanan.php");
